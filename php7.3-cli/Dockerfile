@@ -8,5 +8,5 @@ RUN install-php-extensions bz2 gd intl pdo_mysql zip
 RUN apk --no-cache add git openssh-client
 RUN composer global require hirak/prestissimo
 
-RUN groupadd -g 1000 jenkins
-RUN useradd -g jenkins -u 1000 -m jenkins
+RUN addgroup -g 1000 jenkins
+RUN adduser -G jenkins -u 1000 -D jenkins
