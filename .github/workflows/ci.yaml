@@ -1,16 +1,15 @@
-name: php7.3-cli
+name: ci
 
 on:
   push: [master]
   pull_request:
-    paths: [php7.3-cli/**]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        directories: ['php7.3-cli']
+        directories: ['jenkins', 'php7.3-cli']
     steps:
       - uses: actions/checkout@v2
       - run: docker build docker build ${{ matrix.directories }}
