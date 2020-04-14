@@ -1,9 +1,7 @@
 name: jenkins
 
 on:
-  push:
-    branches: [master]
-    paths: [jenkins/**]
+  push: [master]
   pull_request:
     paths: [jenkins/**]
 

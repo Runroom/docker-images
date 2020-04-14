@@ -1,9 +1,7 @@
 name: php7.3-cli
 
 on:
-  push:
-    branches: [master]
-    paths: [php7.3-cli/**]
+  push: [master]
   pull_request:
     paths: [php7.3-cli/**]
 
