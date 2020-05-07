@@ -7,3 +7,6 @@ update_configs:
   - package_manager: docker
     directory: /php7.3-cli
     update_schedule: daily
+  - package_manager: docker
+    directory: /php7.4-cli
+    update_schedule: daily
