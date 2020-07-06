@@ -17,6 +17,16 @@ updates:
     versions:
     - ">= 7.4.a, < 7.5"
 - package-ecosystem: docker
+  directory: "/php7.1-cli"
+  schedule:
+    interval: daily
+    time: '04:00'
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: php
+    versions:
+    - ">= 7.2.a, < 7.5"
+- package-ecosystem: docker
   directory: "/jenkins"
   schedule:
     interval: daily

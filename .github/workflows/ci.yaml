@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        directories: ['jenkins', 'php7.3-cli']
+        directories: ['jenkins', 'php7.1-cli', 'php7.3-cli', 'php7.4-cli']
     steps:
       - uses: actions/checkout@v2
       - run: docker build ${{ matrix.directories }}
