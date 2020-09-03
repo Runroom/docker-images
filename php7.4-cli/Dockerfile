@@ -8,9 +8,9 @@ COPY --from=composer:2 /usr/bin/composer /tmp/composer-v2
 RUN echo -e '#!/bin/ash\nCOMPOSER_HOME=~/.composer-v2 /tmp/composer-v2 "$@"' > /usr/bin/composer-v2 && \
     chmod +x /usr/bin/composer-v2
 
-# RUN install-php-extensions bz2 gd intl pdo_mysql zip
+RUN install-php-extensions bz2 gd intl pdo_mysql zip pcov
 
-# RUN apk --no-cache add git openssh-client patch unzip
+RUN apk --no-cache add git openssh-client patch unzip
 
 RUN addgroup -g 1000 jenkins
 RUN adduser -G jenkins -u 1000 -D jenkins
