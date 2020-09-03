@@ -13,4 +13,14 @@ jobs:
         directories: ['jenkins', 'php7.1-cli', 'php7.3-cli', 'php7.4-cli']
     steps:
       - uses: actions/checkout@v2
-      - run: docker build ${{ matrix.directories }}
+      - uses: docker/build-push-action@v1
+        env:
+          DOCKER_BUILDKIT: 1
+        with:
+          repository: runroom/${{ matrix.directories }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          tag_with_ref: true
+          tag_with_sha: true
+          path: ${{ matrix.directories }}
+          push: ${{ github.ref == 'refs/heads/master' }}
