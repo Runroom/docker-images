@@ -1,7 +1,7 @@
 FROM php:7.1.33-cli-alpine
 
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/bin/
-COPY --from=composer:1 /usr/bin/composer /usr/bin/composer
+COPY --from=composer:1 /usr/bin/composer /usr/bin/
 
 RUN install-php-extensions bz2 gd intl pdo_mysql zip mcrypt
 
