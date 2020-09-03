@@ -5,7 +5,7 @@ COPY --from=composer:1 /usr/bin/composer /usr/bin/
 COPY --from=composer:2 /usr/bin/composer /tmp/composer-v2
 
 # Remove this trick when using only one version of composer
-RUN echo -e '#!/bin/ash\nCOMPOSER_HOME=~/.composer-v2 /tmp/composer-v2' > /usr/bin/composer-v2 && \
+RUN echo -e '#!/bin/ash\nCOMPOSER_HOME=~/.composer-v2 /tmp/composer-v2 "$@"' > /usr/bin/composer-v2 && \
     chmod +x /usr/bin/composer-v2
 
 RUN install-php-extensions bz2 gd intl pdo_mysql zip
