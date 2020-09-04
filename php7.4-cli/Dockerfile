@@ -9,8 +9,9 @@ RUN echo -e '#!/bin/ash\nCOMPOSER_HOME=~/.composer-v2 /tmp/composer-v2 "$@"' > /
     chmod +x /usr/bin/composer-v2
 
 RUN install-php-extensions bz2 gd intl pdo_mysql zip pcov
-
 RUN apk --no-cache add git openssh-client patch unzip
+
+COPY extra.ini $PHP_INI_DIR/conf.d/php.ini
 
 RUN addgroup -g 1000 jenkins
 RUN adduser -G jenkins -u 1000 -D jenkins
