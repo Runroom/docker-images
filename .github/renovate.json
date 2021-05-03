@@ -16,6 +16,12 @@
         "bump"
       ],
       "enabled": false
+    },
+    {
+      "matchPackageNames": ["php"],
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["patch"],
+      "enabled": true
     }
   ]
 }
