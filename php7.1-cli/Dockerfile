@@ -3,7 +3,7 @@ FROM php:7.1.33-cli-alpine
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/bin/
 COPY --from=composer:1 /usr/bin/composer /usr/bin/
 
-RUN install-php-extensions bz2 gd intl pdo_mysql zip mcrypt
+RUN install-php-extensions bz2 gd intl pdo_mysql zip mcrypt exif bcmath
 RUN apk --no-cache add git openssh-client patch unzip
 
 COPY extra.ini $PHP_INI_DIR/conf.d/php.ini
