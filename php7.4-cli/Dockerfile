@@ -8,7 +8,7 @@ COPY --from=composer:2 /usr/bin/composer /tmp/composer-v2
 RUN echo -e '#!/bin/ash\nCOMPOSER_HOME=~/.composer-v2 /tmp/composer-v2 "$@"' > /usr/bin/composer-v2 && \
     chmod +x /usr/bin/composer-v2
 
-RUN install-php-extensions bz2 gd intl pdo_mysql zip pcntl pcov exif bcmath
+RUN install-php-extensions bz2 gd intl pdo_mysql zip pcntl pcov exif bcmath calendar
 RUN apk --no-cache add git openssh-client patch unzip
 
 COPY extra.ini $PHP_INI_DIR/conf.d/php.ini
