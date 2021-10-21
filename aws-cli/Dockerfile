@@ -1,10 +1,10 @@
-FROM python:3.10
+FROM python:3.10-alpine
 
-RUN pip install awscli ecs-deploy --upgrade
+RUN apk --no-cache add curl
 
-RUN groupadd --gid 999 docker
-RUN groupadd --gid 1000 jenkins
-RUN adduser --gid 1000 --uid 1000 --disabled-password --gecos '' jenkins
-RUN usermod -aG docker jenkins
+RUN pip install awscli --upgrade
+
+RUN addgroup -g 1000 jenkins
+RUN adduser -G jenkins -u 1000 -D jenkins
 
 USER jenkins
