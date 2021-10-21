@@ -1,10 +1,8 @@
-FROM python:3.10-alpine
-
-RUN apk --no-cache add curl
+FROM python:3.10
 
 RUN pip install awscli ecs-deploy --upgrade
 
-RUN addgroup -g 1000 jenkins
-RUN adduser -G jenkins -u 1000 -D jenkins
+RUN groupadd --gid 1000 jenkins
+RUN adduser --gid 1000 --uid 1000 --disabled-password --gecos '' jenkins
 
 USER jenkins
