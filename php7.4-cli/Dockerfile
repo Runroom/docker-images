@@ -1,4 +1,4 @@
-FROM php:7.4.25-cli-alpine
+FROM php:7.4.26-cli-alpine
 
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/bin/
 COPY --from=composer:1 /usr/bin/composer /usr/bin/
