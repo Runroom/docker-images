@@ -1,9 +1,9 @@
 FROM php:8.0.12-cli-alpine
 
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/bin/
-COPY --from=composer:2 /usr/bin/composer /usr/bin/
+COPY --from=composer:2.2 /usr/bin/composer /usr/bin/
 
-RUN install-php-extensions bz2 gd intl pdo_mysql zip pcntl pcov exif bcmath calendar
+RUN install-php-extensions bz2 gd intl pdo_mysql pdo_pgsql zip pcntl pcov exif bcmath calendar
 RUN apk --no-cache add git openssh-client patch unzip
 
 COPY extra.ini $PHP_INI_DIR/conf.d/php.ini
