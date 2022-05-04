@@ -1,7 +1,7 @@
 FROM php:8.1.5-cli-alpine
 
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/bin/
-COPY --from=composer:2.2 /usr/bin/composer /usr/bin/
+COPY --from=composer:2.3 /usr/bin/composer /usr/bin/
 
 RUN install-php-extensions bz2 gd intl pdo_mysql pdo_pgsql zip pcntl pcov exif bcmath calendar
 RUN apk --no-cache add git openssh-client patch unzip
