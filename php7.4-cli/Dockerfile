@@ -1,8 +1,8 @@
 FROM php:7.4.30-cli-alpine
 
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/bin/
-COPY --from=composer:1 /usr/bin/composer /usr/bin/
-COPY --from=composer:2.3 /usr/bin/composer /tmp/composer-v2
+COPY --from=composer:2 /usr/bin/composer /usr/bin/
+COPY --from=composer:2.4 /usr/bin/composer /tmp/composer-v2
 
 # Remove this trick when using only one version of composer
 RUN echo -e '#!/bin/ash\nCOMPOSER_HOME=~/.composer-v2 /tmp/composer-v2 "$@"' > /usr/bin/composer-v2 && \
