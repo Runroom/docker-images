@@ -1,7 +1,5 @@
 {
-  "extends": [
-    "config:base"
-  ],
+  "extends": ["config:base"],
   "packageRules": [
     {
       "matchPackageNames": ["php"],
@@ -15,5 +13,6 @@
       "matchUpdateTypes": ["patch"],
       "enabled": true
     }
-  ]
+  ],
+  "ignorePaths": ["node14", "php7.1-cli", "php7.3-cli"]
 }
