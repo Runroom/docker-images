@@ -1,5 +1,12 @@
-FROM node:16-alpine
+FROM node:16-slim
 
-RUN apk --no-cache add git openssh-client patch unzip
+RUN apt update \
+    && apt install -y --no-install-recommends \
+    git \
+    openssh-client \
+    patch \
+    unzip \
+    && apt clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 
 USER node
