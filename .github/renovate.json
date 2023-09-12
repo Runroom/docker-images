@@ -14,5 +14,5 @@
       "enabled": true
     }
   ],
-  "ignorePaths": ["node14", "php7.1-cli", "php7.3-cli"]
+  "ignorePaths": ["node16", "php8.0-cli"]
 }
