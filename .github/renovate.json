@@ -12,6 +12,12 @@
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["patch"],
       "enabled": true
+    },
+    {
+      "matchPackageNames": ["node"],
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
     }
   ],
   "ignorePaths": ["node16", "php8.0-cli"]
