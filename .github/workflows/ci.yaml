@@ -24,7 +24,7 @@ jobs:
           images: runroom/${{ matrix.directories }}
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}
-      - uses: docker/build-push-action@v5
+      - uses: docker/build-push-action@v6
         with:
           push: ${{ github.ref == 'refs/heads/main' }}
           context: '{{defaultContext}}:${{ matrix.directories }}'
