@@ -28,6 +28,7 @@ jobs:
       - uses: docker/build-push-action@v6
         with:
           push: ${{ github.ref == 'refs/heads/main' }}
+          platforms: linux/amd64,linux/arm64
           context: '{{defaultContext}}:${{ matrix.directories }}'
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
