@@ -8,7 +8,7 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 
-RUN groupmod -g 999 docker
+RUN groupmod -g 1750 docker
 RUN usermod -aG docker jenkins
 
 USER jenkins
