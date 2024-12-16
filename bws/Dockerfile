@@ -6,6 +6,7 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     curl \
     unzip \
+    ca-certificates \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 
@@ -17,6 +18,6 @@ RUN chmod +x /usr/local/bin/bws
 RUN rm bws.zip
 
 RUN groupadd --gid 1000 jenkins
-RUN useradd --uid 1000 --gid 1000 jenkins
+RUN useradd --uid 1000 --gid 1000 jenkins --create-home
 
 USER jenkins
