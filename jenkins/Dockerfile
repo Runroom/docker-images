@@ -5,6 +5,7 @@ USER root
 RUN apt-get update \
     && apt-get install --no-install-recommends --assume-yes \
     docker.io \
+    make \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 
