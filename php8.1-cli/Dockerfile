@@ -1,6 +1,6 @@
 FROM php:8.1.14-cli-alpine
 
-COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/bin/
+COPY --from=mlocati/php-extension-installer:2.7.12 /usr/bin/install-php-extensions /usr/bin/
 COPY --from=composer:2.8 /usr/bin/composer /usr/bin/
 
 RUN install-php-extensions apcu bz2 gd intl opcache pdo_mysql pdo_pgsql zip pcntl pcov exif bcmath calendar
