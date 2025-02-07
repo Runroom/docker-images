@@ -1,24 +1,48 @@
 {
-  "extends": ["config:base"],
+  "extends": [
+    "config:recommended"
+  ],
   "packageRules": [
     {
-      "matchPackageNames": ["php"],
-      "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["major", "minor"],
+      "matchPackageNames": [
+        "php"
+      ],
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchUpdateTypes": [
+        "major",
+        "minor"
+      ],
       "enabled": false
     },
     {
-      "matchPackageNames": ["php"],
-      "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["patch"],
+      "matchPackageNames": [
+        "php"
+      ],
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchUpdateTypes": [
+        "patch"
+      ],
       "enabled": true
     },
     {
-      "matchPackageNames": ["node"],
-      "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["major"],
+      "matchPackageNames": [
+        "node"
+      ],
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ],
       "enabled": false
     }
   ],
-  "ignorePaths": ["node16", "php8.0-cli"]
+  "ignorePaths": [
+    "node16",
+    "php8.0-cli"
+  ]
 }
