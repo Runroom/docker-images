@@ -14,4 +14,6 @@ RUN npm install -g corepack
 
 RUN corepack enable pnpm
 
+RUN npx -y playwright install --with-deps
+
 USER node
