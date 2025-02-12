@@ -1,5 +1,7 @@
 FROM node:22.13-slim
 
+RUN npx -y playwright install --with-deps
+
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     git \
@@ -13,7 +15,5 @@ RUN npm install -g npm
 RUN npm install -g corepack
 
 RUN corepack enable pnpm
-
-RUN npx -y playwright install --with-deps
 
 USER node
