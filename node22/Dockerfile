@@ -1,6 +1,6 @@
 FROM node:22.13-slim
 
-RUN npx -y playwright install --with-deps
+RUN npx -y playwright install chromium --with-deps
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
