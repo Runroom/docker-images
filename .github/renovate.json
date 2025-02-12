@@ -1,5 +1,5 @@
 {
-  "extends": ["config:base"],
+  "extends": ["config:recommended"],
   "packageRules": [
     {
       "matchPackageNames": ["php"],
@@ -20,5 +20,5 @@
       "enabled": false
     }
   ],
-  "ignorePaths": ["node16", "php8.0-cli"]
+  "ignorePaths": ["node16", "node18", "php8.0-cli"]
 }
