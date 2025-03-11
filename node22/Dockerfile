@@ -8,6 +8,7 @@ RUN apt-get update \
     openssh-client \
     patch \
     unzip \
+    ca-certificates \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 
