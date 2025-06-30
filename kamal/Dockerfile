@@ -1,4 +1,4 @@
-FROM ghcr.io/basecamp/kamal:v2.5.3
+FROM ghcr.io/basecamp/kamal:v2.7.0
 
 RUN apk --no-cache add shadow
 
