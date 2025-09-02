@@ -12,8 +12,7 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 
-RUN npm install -g npm
-RUN npm install -g corepack
+RUN npm install -g npm corepack
 
 RUN corepack enable pnpm
 
