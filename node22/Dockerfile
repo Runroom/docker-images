@@ -1,4 +1,4 @@
-FROM node:22.19-slim
+FROM node:22.21-slim
 
 RUN npx -y playwright install-deps
 
